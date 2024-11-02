@@ -1,4 +1,5 @@
 import React from 'react';
+import './Buttons.css'; // Ensure you import your button styles
 
 interface ButtonOptions {
   text: string;
@@ -19,5 +20,9 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
     updateVariable(options.variable, options.value);
   };
 
-  return <button onClick={handleClick}>{options.text}</button>;
+  return (
+    <button className="button" onClick={handleClick}>
+      {options.text}
+    </button>
+  );
 };
